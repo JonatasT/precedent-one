@@ -8,8 +8,11 @@ module.exports = {
   },
   theme: {
     extend: {
+      colors: {
+        gold: "#D6B981",
+      },
       fontFamily: {
-        display: ["var(--font-sf)", "system-ui", "sans-serif"],
+        display: ["var(--font-cormorant)", "system-ui", "serif"],
         default: ["var(--font-inter)", "system-ui", "sans-serif"],
       },
       animation: {
