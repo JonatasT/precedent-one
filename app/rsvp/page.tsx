@@ -85,7 +85,12 @@ export default async function Home() {
             <span className="border-[1px] border-transparent border-b-gold border-t-gold pl-8 pr-8 text-xl leading-10">
               SÁB
             </span>
-            <span className="ml-3 mr-3 text-4xl text-gold" style={{fontFamily: "cormorant"}}>07</span>
+            <span
+              className="ml-3 mr-3 text-4xl text-gold"
+              style={{ fontFamily: "cormorant" }}
+            >
+              07
+            </span>
             <span className="border-[1px] border-transparent border-b-gold border-t-gold pl-8 pr-8 text-xl leading-10">
               16h40
             </span>
@@ -100,7 +105,7 @@ export default async function Home() {
             href=""
             target="_blank"
             rel="noreferrer"
-            className="mb-5 flex max-w-fit animate-fade-u items-center justify-center overflow-hidden rounded-full bg-gold px-2 py-2 transition-colors hover:bg-blue-200"
+            className="animate-fade-u mb-5 flex max-w-fit items-center justify-center overflow-hidden rounded-full bg-gold px-2 py-2 transition-colors hover:bg-blue-200"
           >
             <Website className="rounded-full text-white" />
           </a>
@@ -110,7 +115,7 @@ export default async function Home() {
             rel="noreferrer"
             className="mb-5 flex max-w-fit animate-fade-up items-center justify-center overflow-hidden rounded-full bg-gold px-2 py-2 transition-colors hover:bg-blue-200"
           >
-          <Gift className="rounded-full text-white" />
+            <Gift className="rounded-full text-white" />
           </a>
           <a
             href=""
@@ -118,7 +123,7 @@ export default async function Home() {
             rel="noreferrer"
             className="mb-5 flex max-w-fit animate-fade-up items-center justify-center overflow-hidden rounded-full bg-gold px-2 py-2 transition-colors hover:bg-blue-200"
           >
-          <Location className="rounded-full text-white" />
+            <Location className="rounded-full text-white" />
           </a>
           <a
             href=""
@@ -126,7 +131,7 @@ export default async function Home() {
             rel="noreferrer"
             className="mb-5 flex max-w-fit animate-fade-up items-center justify-center overflow-hidden rounded-full bg-gold px-2 py-2 transition-colors hover:bg-blue-200"
           >
-          <Rsvp className="rounded-full text-white" />
+            <Rsvp className="rounded-full text-white" />
           </a>
         </div>
 
