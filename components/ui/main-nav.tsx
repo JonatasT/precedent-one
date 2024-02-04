@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
+import * as React from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-import { siteConfig } from "@/lib/site"
-import { cn } from "@/lib/utils"
-import { Icons } from "@/components/ui/icons"
-import { Badge } from "@/components/ui/badge"
+import { siteConfig } from "@/lib/site";
+import { cn } from "@/lib/utils";
+import { Icons } from "@/components/ui/icons";
+import { Badge } from "@/components/ui/badge";
 
 export function MainNav() {
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   return (
     <div className="hidden md:flex">
@@ -18,8 +18,10 @@ export function MainNav() {
         <Link
           href=""
           className={cn(
-            "transition-colors hover:text-foreground/80",
-            pathname === "/" ? "text-foreground font-bold" : "text-foreground/60"
+            "hover:text-foreground/80 transition-colors",
+            pathname === "/"
+              ? "text-foreground font-bold"
+              : "text-foreground/60",
           )}
         >
           Home
@@ -27,10 +29,10 @@ export function MainNav() {
         <Link
           href="/presentes"
           className={cn(
-            "transition-colors hover:text-foreground/80",
+            "hover:text-foreground/80 transition-colors",
             pathname?.startsWith("/presentes")
               ? "text-foreground font-bold"
-              : "text-foreground/60"
+              : "text-foreground/60",
           )}
         >
           Presentes
@@ -38,15 +40,15 @@ export function MainNav() {
         <Link
           href="/rsvp"
           className={cn(
-            "transition-colors hover:text-foreground/80",
+            "hover:text-foreground/80 transition-colors",
             pathname?.startsWith("/rsvp")
               ? "text-foreground font-bold"
-              : "text-foreground/60"
+              : "text-foreground/60",
           )}
         >
           RSVP
         </Link>
       </nav>
     </div>
-  )
+  );
 }

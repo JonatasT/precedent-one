@@ -1,9 +1,9 @@
 export function Divider() {
-return (
-<div className="flex gap-2 mb-[-2rem]">
-    <span className="w-1 h-1 rounded bg-[#BDC2C2] "></span>
-    <span className="w-1 h-1 rounded bg-[#BDC2C2] "></span>
-    <span className="w-1 h-1 rounded bg-[#BDC2C2] "></span>
-</div>
-)
+  return (
+    <div className="mb-[-2rem] flex gap-2">
+      <span className="h-1 w-1 rounded bg-[#BDC2C2] "></span>
+      <span className="h-1 w-1 rounded bg-[#BDC2C2] "></span>
+      <span className="h-1 w-1 rounded bg-[#BDC2C2] "></span>
+    </div>
+  );
 }

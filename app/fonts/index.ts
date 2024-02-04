@@ -8,8 +8,8 @@ export const sfPro = localFont({
 
 export const romanticLovely = localFont({
   src: "./Romantic-Lovely.ttf",
-  variable: "--font-romantic-lovely"
-})
+  variable: "--font-romantic-lovely",
+});
 
 export const inter = Inter({
   variable: "--font-inter",
