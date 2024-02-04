@@ -6,6 +6,11 @@ export const sfPro = localFont({
   variable: "--font-sf",
 });
 
+export const romanticLovely = localFont({
+  src: "./Romantic-Lovely.ttf",
+  variable: "--font-romantic-lovely"
+})
+
 export const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
