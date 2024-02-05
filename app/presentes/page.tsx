@@ -97,7 +97,7 @@ export default async function Home() {
             <h2 className="mt-10 scroll-m-20 text-xl font-bold text-gray-900 sm:text-3xl"></h2>
 
             <p className="mx-auto mt-4 max-w-md text-gray-500">
-              A jornada do 'para sempre' começa aqui. Descubra presentes que
+              A jornada do para sempre começa aqui. Descubra presentes que
               traduzem nossos sonhos compartilhados e celebre conosco cada
               momento único
             </p>
@@ -107,7 +107,10 @@ export default async function Home() {
 
       <Divider />
 
-      <Section size="3" className="flex-start animate-fade-up">
+      <Section
+        size="3"
+        className="flex-start  w-full max-w-screen-xl animate-fade-up"
+      >
         <ProductsGrid />
       </Section>
       <Section size="3" className="flex-start animate-fade-up">
