@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 
 export function ProductsCollection() {
@@ -24,9 +25,11 @@ export function ProductsCollection() {
         <ul className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <li>
             <a href="#" className="group block overflow-hidden">
-              <img
+              <Image
                 src="/mesa-cab.png"
                 alt=""
+                width={250}
+                height={300}
                 className="h-[240px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[250px]"
               />
 
@@ -49,9 +52,11 @@ export function ProductsCollection() {
 
           <li>
             <a href="#" className="group block overflow-hidden">
-              <img
+              <Image
                 src="/mesa-cab.png"
                 alt=""
+                width={250}
+                height={300}
                 className="h-[240px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[250px]"
               />
 
@@ -74,9 +79,11 @@ export function ProductsCollection() {
 
           <li>
             <a href="#" className="group block overflow-hidden">
-              <img
+              <Image
                 src="/mesa-cab.png"
                 alt=""
+                width={250}
+                height={300}
                 className="h-[240px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[250px]"
               />
 
@@ -99,9 +106,11 @@ export function ProductsCollection() {
 
           <li>
             <a href="#" className="group block overflow-hidden">
-              <img
+              <Image
                 src="/mesa-cab.png"
                 alt=""
+                width={250}
+                height={300}
                 className="h-[240px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[250px]"
               />
 
@@ -124,9 +133,11 @@ export function ProductsCollection() {
 
           <li>
             <a href="#" className="group block overflow-hidden">
-              <img
+              <Image
                 src="/mesa-cab.png"
                 alt=""
+                width={250}
+                height={300}
                 className="h-[240px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[250px]"
               />
 
@@ -149,9 +160,11 @@ export function ProductsCollection() {
 
           <li>
             <a href="#" className="group block overflow-hidden">
-              <img
+              <Image
                 src="/mesa-cab.png"
                 alt=""
+                width={250}
+                height={300}
                 className="h-[240px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[250px]"
               />
 
@@ -174,9 +187,11 @@ export function ProductsCollection() {
 
           <li>
             <a href="#" className="group block overflow-hidden">
-              <img
+              <Image
                 src="/mesa-cab.png"
                 alt=""
+                width={250}
+                height={300}
                 className="h-[240px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[250px]"
               />
 
@@ -199,9 +214,11 @@ export function ProductsCollection() {
 
           <li>
             <a href="#" className="group block overflow-hidden">
-              <img
+              <Image
                 src="/mesa-cab.png"
                 alt=""
+                width={250}
+                height={300}
                 className="h-[240px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[250px]"
               />
 
@@ -305,14 +322,17 @@ export function ProductsCollection() {
 export function ProductsGrid() {
   return (
     <section>
-      <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+      <div className="mx-auto w-full max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
         <ul className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-3">
           <li>
             <a href="#" className="group relative block">
-              <img
+              <Image
                 src="/mesa-cab.png"
                 alt=""
-                className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
+                width="0"
+                height="0"
+                sizes="100vw"
+                className="aspect-square h-auto w-full object-cover transition duration-500 group-hover:opacity-90"
               />
 
               <div className="absolute inset-0 flex flex-col items-start justify-end p-6">
@@ -328,10 +348,13 @@ export function ProductsGrid() {
 
           <li>
             <a href="#" className="group relative block">
-              <img
+              <Image
                 src="/torradeira.png"
                 alt=""
-                className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
+                width="0"
+                height="0"
+                sizes="100vw"
+                className="aspect-square h-auto w-full object-cover transition duration-500 group-hover:opacity-90"
               />
 
               <div className="absolute inset-0 flex flex-col items-start justify-end p-6">
@@ -347,10 +370,13 @@ export function ProductsGrid() {
 
           <li className="lg:col-span-2 lg:col-start-2 lg:row-span-2 lg:row-start-1">
             <a href="#" className="group relative block">
-              <img
+              <Image
                 src="/cadeira.png"
                 alt=""
-                className="aspect-square w-full object-cover transition duration-500 group-hover:opacity-90"
+                width="0"
+                height="0"
+                sizes="100vw"
+                className="aspect-square h-auto w-full object-cover transition duration-500 group-hover:opacity-90"
               />
 
               <div className="absolute inset-0 flex flex-col items-start justify-end p-6">
