@@ -1,41 +1,11 @@
 "use client";
 import React from "react";
-
-import { DEPLOY_URL } from "@/lib/constants";
-import WebVitals from "@/components/home/web-vitals";
-import ComponentGrid from "@/components/home/component-grid";
-import { nFormatter } from "@/lib/utils";
-
-import Image from "next/image";
-
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Wedding } from "@/components/shared/icons";
-
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-//import { Grid } from "@/components/presentes/grid";
-
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { romanticLovely } from "../fonts";
-import cx from "classnames";
-import { Grid, Box, Section, Flex } from "@radix-ui/themes";
-import { ArrowRightIcon } from "@radix-ui/react-icons";
-import {
-  ProductsCollection,
-  ProductsGrid,
-} from "@/components/presentes/products";
+import { Section } from "@radix-ui/themes";
+import { ProductsCollection, ProductsGrid} from "@/components/presentes/products";
 import { Divider } from "@/components/shared/divider";
 
 export default async function Home() {
