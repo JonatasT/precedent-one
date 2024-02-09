@@ -92,6 +92,6 @@ https://user-images.githubusercontent.com/28986134/212368288-12f41e37-aa8c-4e0a-
 
 - [Vercel Analytics](https://vercel.com/analytics) – Track unique visitors, pageviews, and more in a privacy-friendly way
 
-## Author
+## Some points
 
-- Steven Tey ([@steventey](https://twitter.com/steventey))
+- This project is tested with Browserstack.
