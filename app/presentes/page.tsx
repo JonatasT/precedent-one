@@ -2,10 +2,19 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Wedding } from "@/components/shared/icons";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { Section } from "@radix-ui/themes";
-import { ProductsCollection, ProductsGrid} from "@/components/presentes/products";
+import {
+  ProductsCollection,
+  ProductsGrid,
+} from "@/components/presentes/products";
 import { Divider } from "@/components/shared/divider";
 
 export default async function Home() {
@@ -15,11 +24,11 @@ export default async function Home() {
 
   return (
     <>
-      <div className="static mt-[-1rem]">
+      <div className="static mt-[-1rem] w-full">
         <Section size="3">
           <Carousel
             plugins={[plugin.current]}
-            className="w-[76rem] animate-fade-up"
+            className="w-full animate-fade-up"
             onMouseEnter={plugin.current.stop}
             onMouseLeave={plugin.current.reset}
             style={{ animationDelay: "0.5s", animationFillMode: "forwards" }}
@@ -27,8 +36,8 @@ export default async function Home() {
             <CarouselContent>
               {Array.from({ length: 5 }).map((_, index) => (
                 <CarouselItem key={index}>
-                  <div className="h-[536px] p-1">
-                    <Card className="bg-[url('/carousel-1.png')] bg-auto">
+                  <div className="p-1 sm:h-fit md:h-[536px]">
+                    <Card className="bg-[url('/carousel-1.png')] sm:bg-cover md:bg-auto">
                       <CardContent className="flex aspect-square items-center justify-center p-6">
                         <span className="text-4xl font-semibold">
                           {index + 1}
@@ -46,18 +55,17 @@ export default async function Home() {
       </div>
 
       <Section
-        className="mx-auto w-full max-w-screen-xl animate-fade-up px-4 py-8 sm:px-6 sm:py-12 lg:px-8"
+        className="mx-auto w-full max-w-screen-xl animate-fade-up px-4 py-8 sm:px-6 sm:py-2.5 lg:px-8"
         style={{ animationDelay: "1s", animationFillMode: "forwards" }}
       >
         <header className=" justify-content text-center">
           <div>
-            <h1 className="font-regular mt-10 inline-block scroll-m-20 text-4xl leading-8 tracking-tight lg:text-4xl">
+            <h1 className="font-regular mt-10 inline-block scroll-m-20 text-4xl leading-8 tracking-tight sm:mt-3 lg:text-4xl">
               <div className="mb-2 flex">
                 Nossa lista
                 <Wedding className="flex h-5 w-5 fill-[#ffc857]" />
               </div>
               <span className="ml-10 font-[romanticLovely] lg:text-5xl">
-                {" "}
                 de presentes.
               </span>
             </h1>

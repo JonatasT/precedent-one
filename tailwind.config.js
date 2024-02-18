@@ -7,6 +7,14 @@ module.exports = {
     hoverOnlyWhenSupported: true,
   },
   theme: {
+    screens: {
+      sm: "320px",
+      "2sm": "481px",
+      "3sm": "641px",
+      md: "961px",
+      lg: "1025px",
+      xl: "1281px",
+    },
     extend: {
       colors: {
         gold: "#D6B981",

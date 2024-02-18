@@ -33,7 +33,7 @@ export default function NavBar({ session }: { session: Session | null }) {
                 width="77"
                 height="43"
                 className="absolute mr-2"
-              ></Image>
+              />
             ) : (
               ""
             )}
