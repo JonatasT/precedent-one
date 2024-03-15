@@ -1,3 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jomolhari:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.loader {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.marquee:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  cursor: -webkit-grab;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  transform-origin: 50% 0;
+}
+
+.item {
+  font-size: 0.8rem;
+  letter-spacing: -0.05em;
+  padding-right: 0.25em;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  user-select: none;
+  will-change: transform;
+}
+
+.drag {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  /*background-color: #e6d5b8;*/
+}

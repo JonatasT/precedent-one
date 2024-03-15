@@ -11,3 +11,4 @@ export { default as Gift } from "./gift";
 export { default as Location } from "./location";
 export { default as Rsvp } from "./rsvp";
 export { default as Website } from "./website";
+export { default as Leaf } from "./leaf";

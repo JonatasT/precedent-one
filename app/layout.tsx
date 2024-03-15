@@ -1,16 +1,26 @@
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import cx from "classnames";
-import { sfPro, inter, cormorant } from "./fonts";
+import {
+  sfPro,
+  inter,
+  cormorant,
+  romanticLovely,
+  noelan,
+  peristiwa,
+  jomolhari,
+} from "./fonts";
 import Nav from "@/components/layout/nav";
 import Footer from "@/components/layout/footer";
 import { Suspense } from "react";
+import { usePathname } from "next/navigation";
+import { SoundTrigger } from "@/components/shared/sound-trigger";
+import animationData from "@/components/shared/lotties/loading-animation.json";
 
 export const metadata = {
-  title: "Precedent - Building blocks for your Next.js project",
-  description:
-    "Precedent is the all-in-one solution for your Next.js project. It includes a design system, authentication, analytics, and more.",
-  metadataBase: new URL("https://precedent.dev"),
+  title: "Elisa & Jonatas",
+  description: "Bem-vindos ao nosso site de casamento!",
+  metadataBase: new URL("https://www.elisaejonatas.com.br"),
   themeColor: "#FFF",
 };
 
@@ -20,15 +30,27 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={cx(sfPro.variable, inter.variable, cormorant.variable)}>
-        <div className="fixed z-[-1] h-screen w-full bg-gradient-to-br from-indigo-50 via-white to-cyan-100" />
+    <html lang="pt-br">
+      <body
+        className={cx(
+          sfPro.variable,
+          inter.variable,
+          cormorant.variable,
+          romanticLovely.variable,
+          noelan.variable,
+          peristiwa.variable,
+        )}
+      >
+        <div className={cx("fixed z-[-1] h-screen w-full")} />
         <Suspense fallback="...">
           <Nav />
         </Suspense>
         <main className="flex min-h-screen w-full flex-col items-center justify-center py-32">
-          {children}
+          <Suspense fallback={<div></div>}>{children}</Suspense>
         </main>
+        <div className="fixed bottom-10 left-10 right-0">
+          <SoundTrigger />
+        </div>
         <Footer />
         <Analytics />
       </body>

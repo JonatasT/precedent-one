@@ -1,5 +1,12 @@
 import localFont from "next/font/local";
-import { Inter, Cormorant_Garamond } from "next/font/google";
+import { Inter, Cormorant_Garamond, Jomolhari } from "next/font/google";
+import local from "next/font/local";
+
+export const jomolhari = Jomolhari({
+  weight: "400",
+  variable: "--font-jomolhari",
+  subsets: ["latin"],
+});
 
 export const sfPro = localFont({
   src: "./SF-Pro-Display-Medium.otf",
@@ -9,6 +16,16 @@ export const sfPro = localFont({
 export const romanticLovely = localFont({
   src: "./Romantic-Lovely.ttf",
   variable: "--font-romantic-lovely",
+});
+
+export const noelan = localFont({
+  src: "./noelan-script.otf",
+  variable: "--font-noelan",
+});
+
+export const peristiwa = localFont({
+  src: "./Peristiwa.otf",
+  variable: "--font-peristiwa",
 });
 
 export const inter = Inter({

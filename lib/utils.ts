@@ -67,3 +67,16 @@ export const truncate = (str: string, length: number) => {
   if (!str || str.length <= length) return str;
   return `${str.slice(0, length)}...`;
 };
+
+export function lerp(
+  current: number,
+  target: number,
+  speed = 0.1,
+  limit = 0.001,
+) {
+  let change = (target - current) * speed;
+  if (Math.abs(change) < limit) {
+    change = target - current;
+  }
+  return change;
+}

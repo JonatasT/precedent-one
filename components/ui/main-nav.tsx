@@ -16,7 +16,7 @@ export function MainNav() {
     <div className="hidden md:flex">
       <nav className="flex items-center gap-[2.5rem] text-sm">
         <Link
-          href=""
+          href="/"
           className={cn(
             "hover:text-foreground/80 transition-colors",
             pathname === "/"
@@ -46,7 +46,7 @@ export function MainNav() {
               : "text-foreground/60",
           )}
         >
-          RSVP
+          Presença
         </Link>
       </nav>
     </div>

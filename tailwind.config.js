@@ -1,3 +1,9 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
+
 /** @type {import('tailwindcss').Config} */
 const plugin = require("tailwindcss/plugin");
 
@@ -18,10 +24,56 @@ module.exports = {
     extend: {
       colors: {
         gold: "#D6B981",
+        white: "#fff",
+        darkslateblue: "#004791",
+        gainsboro: "#e6e6e6",
+        steelblue: {
+          100: "#1b79ad",
+          200: "#266eb8",
+        },
+        dimgray: "#6c6c6c",
+        black: "#000",
+        darkgray: "#969696",
       },
       fontFamily: {
         display: ["var(--font-cormorant)", "system-ui", "serif"],
         default: ["var(--font-inter)", "system-ui", "sans-serif"],
+        "romantic-lovely": [
+          "var(--font-romantic-lovely)",
+          "system-ui",
+          "serif",
+        ],
+        inter: ["var(--font-inter)", "system-ui", "sans-serif"],
+        noelan: ["var(--font-noelan)", "system-ui", "serif"],
+        peristiwa: ["var(--font-peristiwa)", "system-ui", "sans-serif"],
+        montserrat: "Montserrat",
+        inter: "Inter",
+        "kaisei-decol": "'Kaisei Decol'",
+        jomolhari: ["var(--font-jomolhari)", "system-ui", "serif"],
+      },
+      borderRadius: {
+        lg: "18px",
+      },
+      fontSize: {
+        xs: "0.75rem",
+        base: "1rem",
+        "49xl": "4.25rem",
+        "22xl": "2.563rem",
+        "35xl": "3.375rem",
+        sm: "0.875rem",
+        smi: "0.813rem",
+        inherit: "inherit",
+      },
+      screens: {
+        mq750: {
+          raw: "screen and (max-width: 750px)",
+        },
+        mq675: {
+          raw: "screen and (max-width: 675px)",
+        },
+        mq450: {
+          raw: "screen and (max-width: 450px)",
+        },
       },
       animation: {
         // Fade up and down
@@ -69,9 +121,17 @@ module.exports = {
           "100%": { opacity: 1, transform: "translateY(0)" },
         },
       },
+      backgroundImage: {
+        "hero-pattern": "url('/img/hero-pattern.svg')",
+        "footer-texture": "url('/bg-blue-footer.png')",
+      },
+      rotate: {
+        270: "270deg",
+      },
     },
   },
   plugins: [
+    addVariablesForColors,
     require("@tailwindcss/forms"),
     require("@tailwindcss/typography"),
     plugin(({ addVariant }) => {
@@ -80,3 +140,15 @@ module.exports = {
     }),
   ],
 };
+
+// This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
+function addVariablesForColors({ addBase, theme }) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val]),
+  );
+
+  addBase({
+    ":root": newVars,
+  });
+}
