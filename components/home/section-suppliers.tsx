@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Ripple } from "@/components/shared/ripple-water/index";
 
 export function SectionSuppliers() {
   return (
