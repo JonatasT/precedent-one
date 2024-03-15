@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, ReactNode } from "react";
 import { motion, useSpring, useTransform } from "framer-motion";
 import FontFaceObserver from "fontfaceobserver";
 import normalizeWheel from "normalize-wheel";
@@ -8,7 +8,7 @@ import { useWindowSize } from "@react-hook/window-size";
 
 interface Data {
   content: string;
-  speed: number;
+  speed: any;
   threshold: number;
   wheelFactor: number;
   dragFactor: number;
@@ -32,7 +32,7 @@ const _: Data = {
 };
 
 const MarqueeItem = ({ content, speed }: Data) => {
-  const item = useRef(null);
+  const item = useRef<boolean | number | any>(null);
   const rect = useRef({});
   const x = useRef(0);
 
@@ -40,10 +40,15 @@ const MarqueeItem = ({ content, speed }: Data) => {
 
   const setX = () => {
     if (!item.current || !rect.current) return;
-    const xPercentage = (x.current / rect.current.width) * 100;
+    //const xPercentage = (x.current / rect.current.width) * 100;
+    const xPercentage =
+      (x.current / (rect.current as PictureInPictureWindow).width) * 100;
+
     if (xPercentage < -100) x.current = 0;
-    if (xPercentage > 0) x.current = -rect.current.width;
-    item.current.style.transform = `translate3d(${xPercentage}%, 0, 0)`;
+    if (xPercentage > 0)
+      x.current = -(rect.current as PictureInPictureWindow).width;
+    const element = item.current as HTMLElement;
+    element.style.transform = `translate3d(${xPercentage}%, 0, 0)`;
   };
 
   useEffect(() => {
@@ -65,9 +70,9 @@ const MarqueeItem = ({ content, speed }: Data) => {
 };
 
 const InteractiveMarquee = () => {
-  const marquee = useRef(null);
+  const marquee = useRef<boolean | number | any>(null);
   const slowDown = useRef(false);
-  const isScrolling = useRef(false);
+  const isScrolling = useRef<boolean | number | any>(null);
   const constraintsRef = useRef(null);
 
   const x = useRef(0);
@@ -85,7 +90,7 @@ const InteractiveMarquee = () => {
   const opacity = useTransform(speed, [-w * 0.2, 0, w * 0.2], [1, 0, 1]);
   const skewX = useTransform(speed, [-w * 0.25, 0, w * 0.25], [-25, 0, 25]);
 
-  const onWheel = (e: Event) => {
+  const onWheel: React.WheelEventHandler = (e) => {
     const normalized = normalizeWheel(e);
     x.current = normalized.pixelY * _.wheelFactor;
 
@@ -97,7 +102,7 @@ const InteractiveMarquee = () => {
     }, 30);
   };
 
-  const onPointerDown = () => {
+  const onPointerDown: React.PointerEventHandler = () => {
     slowDown.current = true;
     marquee.current.classList.add("drag");
     speed.set(0);
@@ -109,7 +114,7 @@ const InteractiveMarquee = () => {
     speed2.set(_.dragFactor * -info.delta.x * 0.9);
   };
 
-  const onPointerUp = (e: Event) => {
+  const onPointerUp: React.PointerEventHandler = (e) => {
     slowDown.current = false;
     marquee.current.classList.remove("drag");
     x.current = _.speed;
@@ -145,8 +150,20 @@ const InteractiveMarquee = () => {
         dragElastic={0.0001}
       >
         <div className="wrapper	h-[1.9rem] w-screen overflow-x-hidden bg-[url('/bg-marquee.svg')] text-white">
-          <MarqueeItem content={_.content} speed={speed} />
-          <MarqueeItem content={_.content} speed={speed} />
+          <MarqueeItem
+            content={_.content}
+            speed={speed}
+            threshold={0}
+            wheelFactor={0}
+            dragFactor={0}
+          />
+          <MarqueeItem
+            content={_.content}
+            speed={speed}
+            threshold={0}
+            wheelFactor={0}
+            dragFactor={0}
+          />
         </div>
       </motion.div>
     </>
