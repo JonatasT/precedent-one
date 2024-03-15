@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Ripple } from "@/components/shared/ripple-water/index";
 
@@ -6,10 +7,12 @@ export function SectionSuppliers() {
   return (
     <div className="flex w-full flex-row justify-center bg-white">
       <div className="relative h-[832px] w-[1280px] bg-white">
-        <img
+        <Image
           className="absolute left-[128px] top-[119px] h-[593px] w-[512px]"
           alt="Left side"
-          src="slider-image.png"
+          src="/slider-image.png"
+          width={593}
+          height={512}
         />
         <div className="absolute left-[734px] top-[83px] h-[698px] w-[473px]">
           <div className="all-[unset] absolute left-0 top-[664px] box-border h-[34px] w-[135px]">

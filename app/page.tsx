@@ -24,25 +24,34 @@ export default async function Home() {
           <div className="w-full">
             <div className="max-md:flex-col max-md:gap-0 flex gap-5">
               <div className="max-md:ml-0 max-md:w-full z-40 mr-[-2rem] flex w-[30%] flex-col">
-                <img
+                <Image
+                  alt=""
                   loading="lazy"
                   src="/ornament-hero-3.svg"
                   className="aspect-[0.84] w-[138px] max-w-full shrink-0"
+                  width={138}
+                  height={225.66}
                 />
               </div>
               <div className="max-md:w-full flex w-[70%] flex-col">
-                <img
+                <Image
+                  alt=""
                   loading="lazy"
                   src="/photo-hero-2.png"
-                  className="mt-14 aspect-[0.82] w-full grow"
+                  className="mt-14 aspect-[0.82]"
+                  width={319}
+                  height={390}
                 />
               </div>
             </div>
           </div>
-          <img
+          <Image
             loading="lazy"
-            src="/ornament-hero-4.svg"
+            src="/ornament-3.svg"
             className="mt-20 aspect-[1.52] w-44 max-w-full self-end"
+            alt=""
+            width={259.17}
+            height={117.64}
           />
         </div>
 

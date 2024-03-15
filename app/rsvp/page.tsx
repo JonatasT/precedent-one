@@ -8,8 +8,16 @@ import {
 import Letter from "@/components/rsvp/letter";
 import Frame from "@/components/rsvp/frame";
 import Image from "next/image";
+import { forwardRef, useRef } from "react";
+import Modal from "@/components/ui/modal";
 
 export default async function Rsvp() {
+  const modalRef = useRef<HTMLDialogElement>(null);
+
+  const handleClick = () => {
+    modalRef.current?.showModal();
+  };
+
   return (
     <div className="z-10 mb-40 w-full max-w-xl px-5 xl:px-0">
       {/*
@@ -54,27 +62,16 @@ export default async function Rsvp() {
         “Pois onde estiver o amor, ali estará também o nosso coração.” Lc. 12:34
       </p>
       <div>
-        {/* Open the modal using document.getElementById('ID').showModal() method */}
-        <button
-          className="btn"
-          onClick={() => document.getElementById("my_modal_1").showModal()}
-        >
-          <span className="absolute z-50 ml-[15rem] mt-[12.5rem] cursor-pointer rounded-full bg-transparent p-[3rem]" />
+        <button className="btn" onClick={handleClick}>
+          <span className="absolute z-50 ml-[15rem] mt-[14.5rem] cursor-pointer rounded-full bg-transparent p-[3rem]" />
         </button>
-        <dialog id="my_modal_1" className="modal">
-          <div className="modal-box">
-            <h3 className="text-lg font-bold">Hello!</h3>
-            <p className="py-4">
-              Press ESC key or click the button below to close
-            </p>
-            <div className="modal-action">
-              <form method="dialog">
-                {/* if there is a button in form, it will close the modal */}
-                <button className="btn">Close</button>
-              </form>
-            </div>
-          </div>
-        </dialog>
+
+        <Modal ref={modalRef}>
+          <form method="dialog">
+            {/* if there is a button in form, it will close the modal */}
+            <button className="btn">Close</button>
+          </form>
+        </Modal>
         <div
           className="mx-auto mb-[4rem] mt-8 flex animate-fade-up items-center justify-center space-x-5 opacity-0"
           style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}
@@ -148,3 +145,5 @@ export default async function Rsvp() {
     </div>
   );
 }
+
+Modal.displayName = "Confirmar presença";

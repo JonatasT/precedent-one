@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import CountdownTimer from "./countdownTimer";
 
 export function SectionAbout() {
@@ -24,20 +25,26 @@ export function SectionAbout() {
 
         <CountdownTimer targetDate={targetDate} />
 
-        <img
+        <Image
           className="absolute left-[325px] top-[622px] h-[210px] w-[274px]"
           alt="Ornament"
           src="ornament-3.svg"
+          width={274}
+          height={210}
         />
-        <img
+        <Image
           className="absolute left-[1125px] top-[25px] h-[122px] w-[86px]"
           alt="Ornament"
           src="ornament-2.svg"
+          width={86}
+          height={122}
         />
-        <img
+        <Image
           className="absolute left-[146px] top-[156px] h-[78px] w-[104px]"
           alt="Ornament"
           src="ornament-1.svg"
+          width={104}
+          height={78}
         />
       </div>
     </div>

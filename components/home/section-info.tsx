@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "../ui/button";
 
 export function SectionInfo() {
@@ -19,10 +20,12 @@ export function SectionInfo() {
           <div className="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-16 lg:space-y-0">
             <div className="group relative">
               <div className="sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1  relative h-[23.25rem] w-full overflow-hidden bg-white group-hover:opacity-75 sm:h-[23.25rem]">
-                <img
+                <Image
                   src="/section-info-location.jpeg"
-                  alt="Desk with leather desk pad, walnut desk organizer, wireless keyboard and mouse, and porcelain mug."
+                  alt=""
                   className="h-full w-full object-cover object-center"
+                  width={275}
+                  height={372}
                 />
               </div>
               <h3 className="mt-6 text-sm text-gray-500">
@@ -40,10 +43,12 @@ export function SectionInfo() {
             </div>
             <div className="group relative">
               <div className="sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1  relative h-[23.25rem] w-full overflow-hidden bg-white group-hover:opacity-75 sm:h-[23.25rem]">
-                <img
+                <Image
                   src="/section-info-indumentaria.jpg"
-                  alt="Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant."
+                  alt=""
                   className="h-full w-full object-cover object-center"
+                  width={275}
+                  height={372}
                 />
               </div>
               <h3 className="mt-6 text-sm text-gray-500">
@@ -61,10 +66,12 @@ export function SectionInfo() {
             </div>
             <div className="group relative">
               <div className="sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1  relative h-[23.25rem] w-full overflow-hidden bg-white group-hover:opacity-75 sm:h-[23.25rem]">
-                <img
+                <Image
                   src="/section-info-fornecedores.jpg"
-                  alt="Collection of four insulated travel bottles on wooden shelf."
+                  alt=""
                   className="h-full w-full object-cover object-center"
+                  width={275}
+                  height={372}
                 />
               </div>
               <h3 className="mt-6 text-sm text-gray-500">

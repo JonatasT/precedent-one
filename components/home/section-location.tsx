@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 import React, { useEffect, useRef } from "react";
 import mapboxgl from "mapbox-gl";
@@ -22,11 +23,13 @@ export function SectionLocation() {
         </div>
         <div className=" justify-content flex max-w-full flex-row flex-wrap items-center gap-[0rem_1.063rem] text-left font-jomolhari text-[1.125rem] text-white">
           <div className="flex w-[18.5rem] flex-row items-start justify-start gap-[0rem_1rem]">
-            <img
+            <Image
               className="relative h-[4.375rem] w-[4.375rem] object-cover"
               loading="lazy"
               alt=""
               src="/location-section-cheers.svg"
+              width={70}
+              height={70}
             />
             <div className="flex flex-1 flex-col items-start justify-start px-[0rem] pb-[0rem] pt-[1.375rem]">
               <div className="flex flex-col items-start justify-start gap-[1.125rem_0rem] self-stretch">
@@ -41,11 +44,13 @@ export function SectionLocation() {
             </div>
           </div>
           <div className="box-border flex min-w-[15.5rem] max-w-full flex-1 flex-row items-start justify-start gap-[0rem_1.063rem] py-[0rem] pl-[0rem] pr-[2.75rem] mq450:box-border mq450:flex-wrap mq450:pr-[1.25rem]">
-            <img
+            <Image
               className="relative h-[4.375rem] w-[4.375rem] object-cover"
               loading="lazy"
               alt=""
               src="/location-section-church.svg"
+              width={70}
+              height={70}
             />
             <div className="box-border flex min-w-[10.188rem] flex-1 flex-col items-start justify-start px-[0rem] pb-[0rem] pt-[1.375rem]">
               <div className="flex flex-col items-start justify-start gap-[1.125rem_0rem] self-stretch">
@@ -60,11 +65,13 @@ export function SectionLocation() {
             </div>
           </div>
           <div className="flex w-[18.813rem] flex-row items-start justify-start gap-[0rem_1.313rem]">
-            <img
+            <Image
               className="relative h-[4.375rem] w-[4.375rem] object-cover"
               loading="lazy"
               alt=""
               src="/location-section-cake.svg"
+              width={70}
+              height={70}
             />
             <div className="flex flex-1 flex-col items-start justify-start px-[0rem] pb-[0rem] pt-[1.375rem]">
               <div className="flex flex-col items-start justify-start gap-[1.125rem_0rem] self-stretch">
@@ -89,15 +96,14 @@ export const MapLocation = () => {
   const zoom = 13;
 
   useEffect(() => {
-    mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN;
+    mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN ?? "";
 
     const map = new mapboxgl.Map({
-      container: mapContainer.current,
+      container: mapContainer.current || "map-container",
       style: "mapbox://styles/mapbox/streets-v12",
       center: [longitude, latitude],
       zoom: zoom,
       scrollZoom: false,
-      zoomControl: true,
       attributionControl: false,
     });
 
@@ -109,7 +115,7 @@ export const MapLocation = () => {
      });*/
 
     return () => map.remove();
-  }, []);
+  }, [longitude, latitude]);
 
   return (
     <div
