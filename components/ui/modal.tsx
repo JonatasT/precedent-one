@@ -8,12 +8,12 @@ export const Modal = forwardRef<HTMLDialogElement, ModalProps>((props, ref) => {
 
   return (
     <dialog id="my_modal_1" ref={ref} className="modal">
-      <div className="modal-box">
-        <h3 className="text-lg font-bold">Hello!</h3>
-        <p className="py-4">
-          Press ESC! key or click the button below to close!
-        </p>
-        <div className="modal-action">{children}</div>
+      <div className="fixed left-0 top-0 flex h-full w-full items-center justify-center bg-black bg-opacity-50 py-10">
+        <div className="max-h-full w-full max-w-xl overflow-y-auto bg-white sm:rounded-2xl">
+          <div className="w-full">
+            <div className="modal-action">{children}</div>
+          </div>
+        </div>
       </div>
     </dialog>
   );

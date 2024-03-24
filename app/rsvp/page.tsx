@@ -10,6 +10,7 @@ import Frame from "@/components/rsvp/frame";
 import Image from "next/image";
 import { forwardRef, useRef } from "react";
 import Modal from "@/components/ui/modal";
+import { RsvpForm } from "@/components/rsvp/rsvp-form";
 
 export default async function Rsvp() {
   const modalRef = useRef<HTMLDialogElement>(null);
@@ -67,10 +68,7 @@ export default async function Rsvp() {
         </button>
 
         <Modal ref={modalRef}>
-          <form method="dialog">
-            {/* if there is a button in form, it will close the modal */}
-            <button className="btn">Close</button>
-          </form>
+          <RsvpForm />
         </Modal>
         <div
           className="mx-auto mb-[4rem] mt-8 flex animate-fade-up items-center justify-center space-x-5 opacity-0"
