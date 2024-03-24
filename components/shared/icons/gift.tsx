@@ -8,9 +8,9 @@ export default function Gift({ className }: { className?: string }) {
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         className={className}
       >
         <polyline points="20 12 20 22 4 22 4 12"></polyline>
