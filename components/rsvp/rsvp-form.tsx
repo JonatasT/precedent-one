@@ -1,5 +1,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
 
 export function RsvpForm() {
   const {
@@ -9,24 +12,39 @@ export function RsvpForm() {
     formState: { errors },
   } = useForm({
     defaultValues: {
-      example: "",
-      exampleRequired: "",
+      fullName: "",
+      cellPhone: "",
     },
   });
 
-  console.log(watch("example")); // you can watch individual input by pass the name of the input
+  //console.log(watch("example")); // you can watch individual input by pass the name of the input
+
+  const handleSubmitSend = async (data: any) => {
+    try {
+      const response = await fetch("http://localhost:3000/saveConfirmation", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message);
+      }
+
+      const responseData = await response.json();
+      alert("Confirmação de presença salva com sucesso!");
+      console.log(responseData);
+    } catch (error: any) {
+      console.error("Erro ao salvar a confirmação de presença:", error);
+      alert(error.message);
+    }
+  };
 
   return (
-    <form
-      onSubmit={handleSubmit((data) => {
-        if (Object.values(data).every((value) => value === "")) {
-          // Feche o formulário aqui
-          console.log("Formulário fechado");
-        } else {
-          alert(JSON.stringify(data));
-        }
-      })}
-    >
+    <form onSubmit={handleSubmit(handleSubmitSend)}>
       <div className="m-8 mx-auto my-20 max-w-[400px]">
         <div className="mb-8">
           <h1 className="mb-4 text-3xl font-extrabold">
@@ -45,7 +63,7 @@ export function RsvpForm() {
             </label>
             <VerificationIcon fieldName="example" watch={watch} />
             <input
-              {...register("example", {
+              {...register("fullName", {
                 required: true,
                 maxLength: 30,
               })}
@@ -54,7 +72,7 @@ export function RsvpForm() {
               type=""
               placeholder="Digite seu nome aqui..."
             />
-            {errors.exampleRequired && (
+            {errors.fullName && (
               <p className="text-sm text-red-300">
                 Por favor, insira o seu nome completo
               </p>
@@ -66,7 +84,7 @@ export function RsvpForm() {
             </label>
             <VerificationIcon fieldName="exampleRequired" watch={watch} />
             <input
-              {...register("exampleRequired", {
+              {...register("cellPhone", {
                 required: true,
                 maxLength: 16,
               })}
@@ -78,7 +96,7 @@ export function RsvpForm() {
                 (e.target.value = formatWhatsAppNumber(e.target.value))
               }
             />
-            {errors.exampleRequired && (
+            {errors.cellPhone && (
               <p className="text-sm text-red-300">
                 Por favor, insira o seu número de celular
               </p>
