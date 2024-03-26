@@ -40,11 +40,11 @@ export default async function handler(
 
 // app/api/saveConfirmation.ts
 // app/api/rsvp/saveConfirmation.js
-const { PrismaClient } = require('@prisma/client');
+const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
 module.exports = async function (fastify, opts) {
- fastify.post('/saveConfirmation', async (request, reply) => {
+  fastify.post("/saveConfirmation", async (request, reply) => {
     try {
       const { fullName, cellPhone } = request.body;
       const confirmation = await prisma.attendanceConfirmation.create({
@@ -53,41 +53,34 @@ module.exports = async function (fastify, opts) {
           cellPhone,
         },
       });
-      reply
-        .code(200)
-        .send({
-          message: "Confirmação de presença salva com sucesso!",
-          confirmation,
-        });
+      reply.code(200).send({
+        message: "Confirmação de presença salva com sucesso!",
+        confirmation,
+      });
     } catch (error) {
       console.error("Erro ao salvar a confirmação de presença:", error);
-      reply
-        .code(500)
-        .send({
-          message: "Erro ao salvar a confirmação de presença. Por favor, tente novamente.",
-        });
+      reply.code(500).send({
+        message:
+          "Erro ao salvar a confirmação de presença. Por favor, tente novamente.",
+      });
     }
- });
+  });
 
   // Endpoint GET para recuperar as confirmações de presença
   // Endpoint GET para recuperar as confirmações de presença
-fastify.get('/confirmations', async (request, reply) => {
-  try {
-     const confirmations = await prisma.attendanceConfirmation.findMany();
-     reply
-       .code(200)
-       .send({
-         message: "Confirmações de presença recuperadas com sucesso!",
-         confirmations,
-       });
-  } catch (error) {
-     console.error("Erro ao recuperar as confirmações de presença:", error);
-     reply
-       .code(500)
-       .send({
-         message: "Erro ao recuperar as confirmações de presença. Por favor, tente novamente.",
-       });
-  }
- });
- 
+  fastify.get("/confirmations", async (request, reply) => {
+    try {
+      const confirmations = await prisma.attendanceConfirmation.findMany();
+      reply.code(200).send({
+        message: "Confirmações de presença recuperadas com sucesso!",
+        confirmations,
+      });
+    } catch (error) {
+      console.error("Erro ao recuperar as confirmações de presença:", error);
+      reply.code(500).send({
+        message:
+          "Erro ao recuperar as confirmações de presença. Por favor, tente novamente.",
+      });
+    }
+  });
 };
