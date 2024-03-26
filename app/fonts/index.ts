@@ -1,6 +1,5 @@
 import localFont from "next/font/local";
 import { Inter, Cormorant_Garamond, Jomolhari } from "next/font/google";
-import local from "next/font/local";
 
 export const jomolhari = Jomolhari({
   weight: "400",
