@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "prisma generate && next dev",
-    "dev:server": "node server.js",
+    "dev:server": "node app/api/rsvp/server.js",
     "build": "node lib/generate-sitemap.js && prisma generate && prisma db push && next build",
     "format:write": "prettier --write \"**/*.{css,js,json,jsx,ts,tsx}\"",
     "format": "prettier \"**/*.{css,js,json,jsx,ts,tsx}\"",
-    "start": "next start",
+    "start": "next start && node app/api/rsvp/server.js",
     "lint": "next lint"
   },
   "type": "commonjs",

@@ -21,7 +21,7 @@ export function RsvpForm() {
 
   const handleSubmitSend = async (data: any) => {
     try {
-      const response = await fetch("http://localhost:3000/saveConfirmation", {
+      const response = await fetch("http://localhost:3005/saveConfirmation", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
