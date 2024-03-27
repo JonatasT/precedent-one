@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "NODE_ENV=development node server.js & prisma generate && next dev",
-    "build": "NODE_ENV=production next build && node lib/generate-sitemap.js && prisma generate && prisma db push && next build",
+    "build": "prisma generate && next build && node lib/generate-sitemap.js && prisma db push",
     "start": "NODE_ENV=production node server.js & next start",
     "format:write": "prettier --write \"**/*.{css,js,json,jsx,ts,tsx}\"",
     "format": "prettier \"**/*.{css,js,json,jsx,ts,tsx}\"",

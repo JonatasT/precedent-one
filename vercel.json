@@ -20,9 +20,6 @@
       "dest": "package.json"
     }
   ],
-  "hooks": {
-    "build": "prisma generate"
-  },
   "env": {
     "PWD": "/vercel"
   },
