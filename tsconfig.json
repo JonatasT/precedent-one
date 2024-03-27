@@ -32,17 +32,18 @@
       }
     ]
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    "app/fonts/index.ts",
-    "pages/api/rsvp/routes.ts",
-    "next.config.mjs",
-    "pages/api",
-    "pages/api/rsvp/routes.jsrmatpages/api/_middleware.jsdleware.js",
-    "/rsvp/routes.ts"
-  ],
-  "exclude": ["node_modules"]
+"include": [
+  "next-env.d.ts",
+  "**/*.ts",
+  "**/*.tsx",
+  ".next/types/**/*.ts",
+  "app/fonts/index.ts",
+  "pages/api/rsvp/routes.ts",
+  "next.config.mjs",
+  "pages/api",
+  "pages/api/rsvp/routes.jsrmatpages/api/_middleware.jsdleware.js",
+  "/rsvp/routes.ts",
+  "app/api/rsvp/saveConfirmation.js"
+],
+"exclude": ["node_modules"]
 }
